@@ -1,0 +1,30 @@
+# Dependencies and Builds
+vendor/
+build/
+composer.lock
+.phpunit.cache
+.phpstan-cache
+
+# IDE Files
+.project
+.settings
+.vscode
+.idea/
+
+# Log Files
+*.log
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+*.local
+
+# Operating System Files
+*~
+*.bak
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+desktop.ini

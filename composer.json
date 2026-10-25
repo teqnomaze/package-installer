@@ -1,0 +1,45 @@
+{
+  "name": "teqnomaze/package-installer",
+  "description": "Installs packages of type custom-package into packages/<Name>/",
+  "keywords": [
+    "package installer",
+    "custom package"
+  ],
+  "type": "composer-plugin",
+  "license": "MIT",
+  "require": {
+    "php": ">=8.2",
+    "composer-plugin-api": "^2.0"
+  },
+  "require-dev": {
+    "composer/composer": "^2.0",
+    "phpstan/phpstan": "^2.3",
+    "phpunit/phpunit": "^11",
+    "squizlabs/php_codesniffer": "^4.0",
+    "teqnomaze/code-coverage": "^2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Teqnomaze\\PackageInstaller\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Teqnomaze\\PackageInstaller\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "class": "Teqnomaze\\PackageInstaller\\Plugin"
+  },
+  "config": {
+		"optimize-autoloader": true,
+		"sort-packages": true
+	},
+  "scripts": {
+    "phpcs": "./vendor/bin/phpcs --standard=phpcs.xml",
+    "phpcbf": "./vendor/bin/phpcbf --standard=phpcs.xml",
+    "phpstan": "./vendor/bin/phpstan analyse -c phpstan.neon --memory-limit=1G",
+    "phpunit": "./vendor/bin/phpunit --configuration phpunit.xml",
+    "coverage": "./vendor/bin/code-coverage ./build/clover.xml 95"
+  }
+}
